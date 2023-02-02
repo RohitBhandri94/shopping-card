@@ -1,0 +1,42 @@
+
+<h6 class=" text-warning">Shopping Bag</h6>
+<div class="row mt-5">
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+        <th>Product Name</th>
+        <th>Quntity</th>
+        <th>Price Details</th>
+        <th>Order Total</th>
+        <th>Action</th>
+      </thead>
+      <tbody *ngFor="let carArr of cardList;">
+        <tr>
+          <td>{{carArr.name}}</td>
+          <td>{{carArr.quntity}}</td>
+          <td>{{carArr.price|currency:'INR'}}</td>
+          <td>{{carArr.price*carArr.quntity |currency:'INR'}}</td>
+          <td><i class="fa fa-trash fa-denger" aria-hidden="true" ></i></td>
+        </tr>
+
+      </tbody>
+    
+        <tr *ngFor="let message of data">
+          <td>{{message.name}}</td>
+          <td>{{message.quntity}}</td>
+          <td>{{message.price|currency:'INR'}}</td>
+          <td>{{message.price*message.quntity |currency:'INR'}}</td>
+          <td><i class="fa fa-trash fa-denger" aria-hidden="true"></i></td>
+        </tr> 
+   
+  
+
+      <tr >
+        <td colspan="3" class="text-center" (click)="grandTotal()" >Total:</td>
+        <td  colspan="2"  class="text-center"  >{{amount}}</td>
+      </tr>
+
+      
+    </table>
+  </div>
+</div>

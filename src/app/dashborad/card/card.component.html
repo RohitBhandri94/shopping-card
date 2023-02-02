@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h6 class="text-center"  class="text-success">Menu Card</h6>
+
+  <div class="row my-5 mr-2 " >
+    <div class="col-sm-3   " *ngFor="let carArr of cardList" >
+        <div class="card"  style="width: 18rem;">
+          <img [src]="carArr.imgData"  class="card-img-top
+           " alt="This is a image">
+          <div class="card-body">
+            <h5 class="card-title">{{carArr.name}}</h5>
+            <p class="card-text">{{carArr.brand}}</p>
+            <h4>{{carArr.price|currency:'INR'}}</h4>
+            <h6>Qty:{{carArr.quntity}}</h6>
+            <button class="mr-4 ml-4"   (click)="couter('add',carArr)" ><i class="fa fa-plus-circle" aria-hidden="true"  q></i>
+            </button>
+            <button class="mr-2" >{{carArr.quntity}}</button>
+            <button class="mr-4 ml-4" (click)="couter('subtract',carArr)"><i class="fa fa-minus" aria-hidden="true"></i>
+            </button>
+             <button (click)=" AddTableData(carArr)" (click)="sendData(carArr) "     class="btn btn-danger mt-3" >Add To Bag</button>
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+

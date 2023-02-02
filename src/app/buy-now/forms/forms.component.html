@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmitt()" #myForm="ngForm"  >
+    <div class="div form-group col-sm-12">
+        <label for="pName">Product Name</label>
+        <input type="text" class="form-control" id="iName" name="productName" #myProName ngModel required>
+        <small class="text-danger" *ngIf="!myForm.controls['productName']?.valid && myForm.controls['productName']?.touched">Product Name is required</small>
+    </div>
+    <div class="div form-group col-sm-12">
+        <label for="pbrand">Brand</label>
+        <input type="text" class="form-control" id="pbrand" name="productBrand" #myProBrand ngModel required>
+        <small class="text-danger" *ngIf="!myForm.controls['productBrand']?.valid && myForm.controls['productBrand']?.touched">product Brand  is required</small>
+    </div>
+    <div class="div form-group col-sm-12">
+        <label for="pImg">Image Link</label>
+        <input type="text" class="form-control" id="pImg" name="productImg" #myProImg ngModel required>
+        <small class="text-danger" *ngIf="!myForm.controls['productImg']?.valid && myForm.controls['productImg']?.touched">Image size should be 100kb</small>
+    </div>
+    <div class="div form-group col-sm-12">
+        <label for="pQty">Quntity</label>
+        <input type="text" class="form-control" id="pQty" name="productQty"  #myProQty ngModel required>
+        <small class="text-danger" *ngIf="!myForm.controls['productQty']?.valid && myForm.controls['productQty']?.touched">product Quntity  is required</small>
+    </div>
+    <div class="div form-group col-sm-12">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" name="productPrice" #myProPrice ngModel required>
+        <small class="text-danger" *ngIf="!myForm.controls['productPrice']?.valid && myForm.controls['productPrice']?.touched">product Price  is required</small>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 ml-2">
+            <button type ="submit" class="btn btn-primary btn-block" (click)="addProduct()">Add</button>
+        </div>
+    </div>
+</form>

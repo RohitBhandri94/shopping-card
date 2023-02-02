@@ -1,0 +1,18 @@
+<hr>
+<button class="btn btn-sm btn-info" (click)="sendCardList()">Send to card List</button>
+<div class="list-group-item my-ingredent-item mt-5" *ngFor="let pro of productList">
+    <div class="my-ingredient-item">
+        <div>
+            <img [src]="pro.imgData" alt="this is a image" class="ingredient-img">
+        </div>
+        <div>
+            <h6 class="m-0 p-0">{{pro.name}}</h6>
+            <p class="small m-0 p-0">({{pro.brand}})</p>
+        </div>
+    </div>
+    <div>
+        <h6>QTY:<span class='small'>{{pro.quntity}}</span>| Price :
+            <span class="small">{{pro.price |currency:'INR'}}</span>
+        </h6>
+    </div>
+</div>
